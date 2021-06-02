@@ -1,0 +1,28 @@
+<mat-card class="mat-card">
+    <mat-card-title class="mat">Register</mat-card-title>
+    <form [formGroup]="Form" (ngSubmit)="onSubmit()" >
+        
+         
+        <label>
+          Email:
+          <input type="text" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f?.email?.errors }">
+          <div *ngIf="submitted && f?.email?.errors" class="invalid-feedback">
+            <div *ngIf="f?.email?.errors?.required">Email is required</div>
+            <div *ngIf="f?.email?.errors?.email">Email must be a valid email address</div>
+        </div>
+        </label><br><br>
+
+        
+        <label><br>
+          Password:
+          <input type="text" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f?.password?.errors }" >
+        </label><br>
+        
+        <button mat-stroked-button type="submit">Submit</button>
+        
+      </form>
+  <!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>
+</mat-card>

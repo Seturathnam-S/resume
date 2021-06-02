@@ -1,0 +1,31 @@
+.navbar{
+    justify-content: space-between;
+}
+span{
+    padding-right: 1rem;
+}
+
+.mat-card{
+
+    width: 80%;
+    margin: auto;
+    border: 3px;
+
+  }
+  .mat {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    border: 3px;
+    
+  }
+
+  table {
+    width: 100%;
+  }
+button{
+    background:white;
+    width: 80%;
+    margin: auto;
+    border: 3px;
+}

@@ -1,0 +1,120 @@
+<mat-tab-group>
+    <mat-tab label="Personal Info">
+      <table>
+        <tr>
+          <th>FirstName:</th>
+          <th>{{data.firstname}}</th>
+        </tr>
+        <tr>
+          <th>LastName:</th>
+          <th>{{data.lastname}}</th>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <th>{{data.email}}</th>
+        </tr>
+        <tr>
+          <th>Mobile: </th>
+          <th>{{data.mobile}}</th>
+        </tr>
+        <tr>
+          <th>Gender:</th>
+          <th>{{data.gender}}</th>
+        </tr>
+      </table> </mat-tab>
+    <mat-tab label="Education"> 
+      <table>
+        <tr>
+          <th>SSLC school Name</th>
+          <th>{{data.sslcname}}</th>
+        </tr>
+        <tr>
+          <th>SSLC school year</th>
+          <th>{{data.sslcyear}}</th>
+        </tr>
+        <tr>
+          <th>SSLC school Mark</th>
+          <th>{{data.sslcper}}</th>
+        </tr>
+        <tr>
+          <th>HSC school Name</th>
+          <th>{{data.hscname}}</th>
+        </tr>
+        <tr>
+          <th>HSC school year</th>
+          <th>{{data.hscyear}}</th>
+        </tr>
+        <tr>
+          <th>HSC school Mark</th>
+          <th>{{data.hscper}}</th>
+        </tr>
+        <tr>
+          <th>College Name</th>
+          <th>{{data.colname}}</th>
+        </tr>
+        <tr>
+          <th>College Branch</th>
+          <th>{{data.coldeg}}</th>
+        </tr>
+        <tr>
+          <th>COllege year</th>
+          <th>{{data.colyear}}</th>
+        </tr>
+        <tr>
+          <th>College CGPA</th>
+          <th>{{data.colper}}</th>
+        </tr>
+      </table> </mat-tab>
+    <mat-tab label="Experience"> 
+      <table>
+        <tr>
+          <th>Company Name:</th>
+          <th>{{data.company}}</th>
+        </tr>
+        <tr>
+          <th>Start Date:</th>
+          <th>{{data.start}}</th>
+        </tr>
+        <tr>
+          <th>End date:</th>
+          <th>{{data.end}}</th>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <th>{{data.desc}}</th>
+        </tr>
+      </table> 
+    </mat-tab>
+    <mat-tab label="Info">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-tab>
+  </mat-tab-group>

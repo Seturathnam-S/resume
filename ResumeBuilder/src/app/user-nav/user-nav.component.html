@@ -1,0 +1,74 @@
+
+  <!-- <app-user-data></app-user-data> -->
+  <mat-toolbar class="navbar">
+    <div>Resume Builder</div>
+    <div >
+    <span  *ngIf="role1"> <button mat-stroked-button (click)="openDialog()">Add</button></span>
+    <span> <button mat-stroked-button (click)="onLogout()">Logout</button></span></div>
+ </mat-toolbar>
+  <mat-card class="mat-card">
+  
+    <div ><div *ngIf="value">
+      <table *ngIf="role1"  >
+            <tr>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+            <tr >
+              <td>{{value.firstname}}</td>
+              <td>{{value.lastname}}</td>
+              <td>{{userDetails.email}}</td>
+            
+            <td>
+              <a class="action-btn" (click)="openDialogedit(value)">
+                <i class="material-icons">edit</i>
+              </a>
+              <a class="action-btn" (click)="deleteTutorial(value._id)">
+                <i class="material-icons">delete</i>
+              </a>
+              <a class="action-btn" (click)="openDialogview(value)">
+                <i class="material-icons">visibility</i>
+              </a>
+            </td>
+          </tr>
+        </table></div>
+        <table *ngIf="!value"  >
+          <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+          <tr >
+            No data available
+        </tr>
+      </table>
+      <table *ngIf="rolevalue">
+        <tr>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let user of value" >
+          <td>{{user.firstname}}</td>
+          <td>{{user.lastname}}</td>
+          <td>{{user.email}}</td>
+        
+        <td>
+          <a *ngIf="role2" class="action-btn" (click)="openDialogedit(user)">
+            <i class="material-icons">edit</i>&nbsp;
+          </a>
+          <a *ngIf="role2" class="action-btn" (click)="deleteTutorial(user._id)">
+            <i class="material-icons">delete</i>&nbsp;
+          </a>
+          <a class="action-btn" (click)="openDialogview(user)">
+            <i class="material-icons">visibility</i>
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+  </mat-card>

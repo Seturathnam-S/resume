@@ -1,0 +1,39 @@
+.navbar{
+    justify-content: space-between;
+}
+span{
+    padding-right: 1rem;
+}
+img{
+  width:50px;
+  height:40px;
+}
+
+.mat-card{
+
+    width: 80%;
+    margin: auto;
+    border: 3px;
+
+  }
+  .mat {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    border: 3px;
+    
+  }
+
+  table {
+    width: 100%;
+  }
+button{
+    background:white;
+    width: 15%;
+    margin: auto;
+    border: 3px;
+}
+button:hover{
+  background-color: grey;
+  font-size: large;
+  }

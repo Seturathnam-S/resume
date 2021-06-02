@@ -1,0 +1,119 @@
+<mat-card>
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="personalFormGroup">
+        <form [formGroup]="personalFormGroup">
+          <ng-template matStepLabel>Personal Details</ng-template>
+          <mat-label>First Name:</mat-label><br>
+          <mat-form-field>
+            <input matInput placeholder="First name" formControlName="firstname" [(ngModel)]="data.firstname">
+          </mat-form-field><br>
+          <mat-label>Last Name:</mat-label><br>
+          <mat-form-field>
+              <mat-label>Last Name</mat-label>
+              <input matInput placeholder="Last name" formControlName="lastname" [(ngModel)]="data.lastname">
+            </mat-form-field><br>
+            <mat-label>Email Address</mat-label><br>
+            <mat-form-field>
+                <mat-label>Email Id</mat-label>
+                <input matInput placeholder="Email id" formControlName="email" [(ngModel)]="data.email" >
+              </mat-form-field><br>
+              <mat-label>Mobile Number</mat-label><br>
+              <mat-form-field>
+                  <mat-label>Mobile number</mat-label>
+                  <span matPrefix>+91 &nbsp;</span>
+                  <input type="number" matInput placeholder="mobile" formControlName="mobile" [(ngModel)]="data.mobile">
+                </mat-form-field><br>
+              <mat-label>Gender</mat-label> &nbsp;
+              <mat-radio-group aria-label="Select an option" formControlName="gender" [(ngModel)]="data.gender">
+                  <mat-radio-button value="male">Male</mat-radio-button>&nbsp;
+                  <mat-radio-button value="female">Female</mat-radio-button>
+                </mat-radio-group>
+          
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="educationFormGroup" label="Education Details">
+        <form [formGroup]="educationFormGroup">
+            <mat-label><b>Enter your SSC/ 10th details</b></mat-label><br>
+            <mat-form-field>
+              <mat-label>Name of the School</mat-label>
+              <input matInput formControlName="sslcname" [(ngModel)]="data.sslcname">
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>Year of completion</mat-label>
+              <input type=number matInput formControlName="sslcyear" [(ngModel)]="data.sslcyear">
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>Percentage / CGPA</mat-label>
+              <input matInput formControlName="sslcper" [(ngModel)]="data.sslcper">
+            </mat-form-field><br><br>
+            <mat-label><b>Enter your HSC/ 12th details</b></mat-label><br>
+            <mat-form-field>
+              <mat-label>Name of the School</mat-label>
+              <input matInput formControlName="hscname" [(ngModel)]="data.hscname">
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>Year of completion</mat-label>
+              <input type=number matInput formControlName="hscyear" [(ngModel)]="data.hscyear">
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>Percentage / CGPA</mat-label>
+              <input matInput formControlName="hscper" [(ngModel)]="data.hscper">
+            </mat-form-field><br><br>
+            <mat-label><b>Enter your Graduation details</b></mat-label><br>
+            <mat-form-field>
+              <mat-label>Name of the College/University</mat-label>
+              <input matInput formControlName="colname" [(ngModel)]="data.colname">
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>Degree/Branch</mat-label>
+              <input matInput formControlName="coldeg" [(ngModel)]="data.coldeg">
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>Year of completion</mat-label>
+              <input type=number matInput formControlName="colyear" [(ngModel)]="data.colyear">
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>Percentage / CGPA</mat-label>
+              <input matInput formControlName="colper" [(ngModel)]="data.colper">
+            </mat-form-field>
+            
+  
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+        <mat-step [stepControl]="exFormGroup" label="Experience">
+          <form [formGroup]="exFormGroup">
+              <mat-label><b>Experience Details</b></mat-label><br>
+              <mat-form-field>
+                <mat-label>Name of the Organization</mat-label>
+                <input matInput formControlName="company" [(ngModel)]="data.company">
+              </mat-form-field><br>
+              <mat-form-field>
+                <mat-label>Start Date</mat-label>
+                <input type=number placeholder="mm/dd/yyyy" matInput formControlName="start" [(ngModel)]="data.star">
+              </mat-form-field><br>
+              <mat-form-field>
+                  <mat-label>End Date</mat-label>
+                  <input type=number placeholder="mm/dd/yyyy" matInput formControlName="end" [(ngModel)]="data.end">
+                </mat-form-field><br>
+              <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="desc" ></textarea>
+              </mat-form-field><br><br>
+  
+              <div align=center>
+                <button mat-button (click)="save()"><b>Submit</b></button>
+                <button mat-button (click)="stepper.reset()"><b>Reset</b></button>
+                <button mat-button (click)="onCancel()">No Thanks</button>
+            </div>
+              
+
+          </form>
+          </mat-step>
+    </mat-horizontal-stepper></mat-card>

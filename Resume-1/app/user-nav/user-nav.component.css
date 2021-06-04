@@ -1,0 +1,27 @@
+
+
+
+  .mat {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    border: 3px;
+    
+  }
+  
+  
+  .nodata {
+    text-align: center;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    
+  }
+
+
+.main-div{
+  height: 93vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -10,39 +10,42 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./stepper.component.css']
 })
 export class StepperComponent implements OnInit {
-
-
+  
   isLinear = true;
   personalFormGroup!: FormGroup;
   educationFormGroup!: FormGroup;
   exFormGroup!:FormGroup;
+  skillFormGroup!:FormGroup;
   emailvalue?: string;
-
+  serverErrorMessages?: string;
   constructor(private _formBuilder: FormBuilder,private resumeService?: ResumeService,
+    
 
     public dialogRef?: MatDialogRef<StepperComponent>,
-    @Inject(MAT_DIALOG_DATA) public data?: any) { }
+    @Inject(MAT_DIALOG_DATA) public data?: any) {
+
+     }
 
   ngOnInit(): void {
     this.personalFormGroup = this._formBuilder.group({
       _id:[''],
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
-      email: ['', Validators.required],
-      mobile: ['', Validators.required],
-      gender:['', Validators.required]
+      firstname: ['',Validators.required],
+      lastname: ['',Validators.required],
+      email: [{value: '', disabled: true}],
+      mobile: ['',Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")],
+      gender:['',Validators.required]
     });
     this.educationFormGroup = this._formBuilder.group({
-      sslcname: [''],
-      sslcyear: [''],
-      sslcper: [''],
-      hscname: [''],
-      hscyear: [''],
-      hscper: [''],
-      colname: [''],
-      coldeg: [''],
-      colyear: [''],
-      colper: ['']
+      sslcname: ['',Validators.required],
+      sslcyear: ['',Validators.required],
+      sslcper: ['',Validators.required],
+      hscname: ['',Validators.required],
+      hscyear: ['',Validators.required],
+      hscper: ['',Validators.required],
+      colname: ['',Validators.required],
+      coldeg: ['',Validators.required],
+      colyear: ['',Validators.required],
+      colper: ['',Validators.required]
 
     });
     this.exFormGroup = this._formBuilder.group({
@@ -52,16 +55,20 @@ export class StepperComponent implements OnInit {
       desc: ['']
 
     });
+    this.skillFormGroup=this._formBuilder.group({
+      skill:['',Validators.required]
+    })
 
   }
 
   save(){
 
 
-    const data = {
+    console.log(this.data.email)
+    const datavalue = {
       firstname: this.personalFormGroup.controls['firstname'].value,
       lastname: this.personalFormGroup.controls['lastname'].value,
-      email: this.personalFormGroup.controls['email'].value,
+      email: this.data.email,
       mobile: this.personalFormGroup.controls['mobile'].value,
       gender: this.personalFormGroup.controls['gender'].value,
       sslcname: this.educationFormGroup.controls['sslcname'].value,
@@ -78,12 +85,12 @@ export class StepperComponent implements OnInit {
       start: this.exFormGroup.controls['start'].value,
       end: this.exFormGroup.controls['end'].value,
       desc: this.exFormGroup.controls['desc'].value,
-      
+      skill:this.skillFormGroup.controls['skill'].value
 
     };
     
     // this.resumeService?.setEmail(this.personalFormGroup.controls['email'].value);
-    this.resumeService?.create(data)
+    this.resumeService?.create(datavalue)
       .subscribe(
         response => {
           console.log(response);
@@ -91,8 +98,13 @@ export class StepperComponent implements OnInit {
           this.reloadPage();
         },
         error => {
-          console.log(error);
-        });
+          if (error.status === 422) {
+            this.serverErrorMessages = error.error.join('<br/>');
+          }
+          else
+            this.serverErrorMessages = 'Something went wrong.Please contact admin.';
+        }
+        );
        alert('success');
   }
   reloadPage() {

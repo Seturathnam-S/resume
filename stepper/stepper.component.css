@@ -1,11 +1,17 @@
-button:hover{
-    background-color: grey;
-    font-size: large;
-    }
-    button{
-        font-size:20px;
-    }
-    mat-card{
-        background-color: lightcoral;
-    }
+.data{
+    width: 100%;
     
+    display: inline-block;
+  
+  }
+  .cancel{
+    background-color: white;
+    border: none;
+  }
+  
+.red{
+  color:red;
+}
+  label{
+    width:100%;
+  }

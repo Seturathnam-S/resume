@@ -1,17 +1,6 @@
-.navbar{
-    justify-content: space-between;
-}
-span{
-    padding-right: 1rem;
-}
 
-.mat-card{
 
-    width: 80%;
-    margin: auto;
-    border: 3px;
 
-  }
   .mat {
     text-align: center;
     width: 50%;
@@ -19,13 +8,27 @@ span{
     border: 3px;
     
   }
+  
+  
+  .nodata {
+    text-align: center;
+    display: flex;
+  justify-content: center;
 
-  table {
-    width: 100%;
+    
   }
-button{
-    background:white;
-    width: 80%;
-    margin: auto;
-    border: 3px;
+
+
+.main-div{
+  height: 93vh;
+  display: flex;
+  justify-content: center;
+  
+}
+.action-btn{
+  border: none;
+  background: none;
+}
+i{
+  color: blue;
 }

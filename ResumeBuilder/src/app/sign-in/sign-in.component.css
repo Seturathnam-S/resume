@@ -6,21 +6,50 @@
     border: 3px;
     
   }
+  
 
-  input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
 
-  input[type=text]:focus {
-    background-color: lightblue;
-  }
 
   label{
     width:100%;
   }
+
+  p{
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid grey;
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  
+  span{
+    display: inline-block;
+    padding: 10px;
+    border-right: 1px solid grey;
+    text-align: center;
+    background-color: #eee;
+  }
+  
+  input[type=text], [type=password]{
+    padding: 10px;
+    width:300px;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .main-div{
+      
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+
+  
+ 
+  

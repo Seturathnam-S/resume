@@ -11,11 +11,12 @@ import { ResumeService } from '../resume.service';
 export class UserDialogComponent implements OnInit{
  
   firstname?:'';
-  isLinear = true;
+  isLinear = false;
   personalFormGroup!: FormGroup;
   educationFormGroup!: FormGroup;
   exFormGroup!:FormGroup;
   emailvalue?: string;
+  skillFormGroup!: FormGroup;
 
   constructor(private _formBuilder: FormBuilder,private resumeService?: ResumeService,
 
@@ -51,6 +52,9 @@ export class UserDialogComponent implements OnInit{
       desc: ['']
 
     });
+    this.skillFormGroup=this._formBuilder.group({
+      skill:['',Validators.required]
+    });
 
   }
 
@@ -77,7 +81,7 @@ export class UserDialogComponent implements OnInit{
       start: this.exFormGroup.controls['start'].value,
       end: this.exFormGroup.controls['end'].value,
       desc: this.exFormGroup.controls['desc'].value,
-      
+      skill:this.skillFormGroup.controls['skill'].value
 
     };
     

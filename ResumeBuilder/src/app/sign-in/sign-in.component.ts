@@ -12,7 +12,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-
+  repeatFieldTextType!: boolean;
   Form = this.fb.group({
     email: ['',[Validators.required, Validators.email]],
     password: ['']
@@ -41,6 +41,10 @@ export class SignInComponent implements OnInit {
         this.serverErrorMessages = err.error.message;
       }
     );
+  }
+  
+  toggleRepeatFieldTextType() {
+    this.repeatFieldTextType = !this.repeatFieldTextType;
   }
 
 }

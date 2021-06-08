@@ -74,11 +74,14 @@ export class UserNavComponent implements OnInit {
     
   }
 
-  openDialog(): void {
+  openDialog(user : any): void {
     //alert("Hi")
+    
     let dialogRef = this.dialog.open(StepperComponent, {
       width: '700px',
       height:'600px',
+      data: user
+  
     });
     dialogRef.afterClosed().subscribe(result => {
       this.email = result;
@@ -103,7 +106,7 @@ export class UserNavComponent implements OnInit {
    
     let dialogref = this.dialog?.open(UserViewComponent, {
       width: '800px',
-      height:'600px',
+      height:'500px',
       data: user
     });
 

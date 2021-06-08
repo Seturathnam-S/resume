@@ -13,5 +13,8 @@ export class UserViewComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onCancel(): void {
+    this.dialogRef?.close();
+  }
 
 }

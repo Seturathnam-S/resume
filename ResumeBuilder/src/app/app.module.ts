@@ -29,10 +29,12 @@ import { UserNavComponent } from './user-nav/user-nav.component';
 import { UserDialogComponent } from './user-dialog/user-dialog.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { UserService } from './user.service';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { UserViewComponent } from './user-view/user-view.component';
+
 
 
 const appRoutes: Routes = [
@@ -54,7 +56,9 @@ const appRoutes: Routes = [
     UserNavComponent,
     UserDialogComponent,
     SignInComponent,
-    UserViewComponent
+    UserViewComponent,
+   
+    
   ],
   imports: [
     BrowserModule,
@@ -76,6 +80,7 @@ const appRoutes: Routes = [
     MatRadioModule,
     MatSelectModule,
     MatCheckboxModule,
+    MatNativeDateModule,
     RouterModule.forRoot(appRoutes, {enableTracing: true}),
   ],
   providers: [{

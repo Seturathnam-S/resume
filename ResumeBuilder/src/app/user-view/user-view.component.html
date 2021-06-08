@@ -1,120 +1,127 @@
-<mat-tab-group>
+<p align="right"> <button class="cancel" (click)="onCancel()"><span class="material-icons">
+  highlight_off
+  </span></button></p>
+  <h3><b>VIEW ONLY</b></h3>
+<mat-tab-group mat-align-tabs="center">
     <mat-tab label="Personal Info">
-      <table>
-        <tr>
-          <th>FirstName:</th>
-          <th>{{data.firstname}}</th>
-        </tr>
-        <tr>
-          <th>LastName:</th>
-          <th>{{data.lastname}}</th>
-        </tr>
-        <tr>
-          <th>Email:</th>
-          <th>{{data.email}}</th>
-        </tr>
-        <tr>
-          <th>Mobile: </th>
-          <th>{{data.mobile}}</th>
-        </tr>
-        <tr>
-          <th>Gender:</th>
-          <th>{{data.gender}}</th>
-        </tr>
-      </table> </mat-tab>
-    <mat-tab label="Education"> 
-      <table>
-        <tr>
-          <th>SSLC school Name</th>
-          <th>{{data.sslcname}}</th>
-        </tr>
-        <tr>
-          <th>SSLC school year</th>
-          <th>{{data.sslcyear}}</th>
-        </tr>
-        <tr>
-          <th>SSLC school Mark</th>
-          <th>{{data.sslcper}}</th>
-        </tr>
-        <tr>
-          <th>HSC school Name</th>
-          <th>{{data.hscname}}</th>
-        </tr>
-        <tr>
-          <th>HSC school year</th>
-          <th>{{data.hscyear}}</th>
-        </tr>
-        <tr>
-          <th>HSC school Mark</th>
-          <th>{{data.hscper}}</th>
-        </tr>
-        <tr>
-          <th>College Name</th>
-          <th>{{data.colname}}</th>
-        </tr>
-        <tr>
-          <th>College Branch</th>
-          <th>{{data.coldeg}}</th>
-        </tr>
-        <tr>
-          <th>COllege year</th>
-          <th>{{data.colyear}}</th>
-        </tr>
-        <tr>
-          <th>College CGPA</th>
-          <th>{{data.colper}}</th>
-        </tr>
-      </table> </mat-tab>
-    <mat-tab label="Experience"> 
-      <table>
-        <tr>
-          <th>Company Name:</th>
-          <th>{{data.company}}</th>
-        </tr>
-        <tr>
-          <th>Start Date:</th>
-          <th>{{data.start}}</th>
-        </tr>
-        <tr>
-          <th>End date:</th>
-          <th>{{data.end}}</th>
-        </tr>
-        <tr>
-          <th>Description</th>
-          <th>{{data.desc}}</th>
-        </tr>
-      </table> 
-    </mat-tab>
-    <mat-tab label="Info">
+      <div class="main-div">
       <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row">FirstName</th>
+            <td>{{data.firstname}}</td>
+          </tr>
+        
+          <tr>
+            <th scope="row">LastName</th>
+            <td>{{data.lastname}}</td>
           </tr>
           <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <th scope="row">Email</th>
+            <td>{{data.email}}</td>
           </tr>
           <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <th scope="row">Mobile</th>
+            <td>{{data.mobile}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Gender</th>
+            <td>{{data.gender}}</td>
           </tr>
         </tbody>
       </table>
+    </div></mat-tab>
+
+
+    <mat-tab label="Education"> 
+    <mat-tab-group class="edu" mat-align-tabs="center">
+        <mat-tab label="SSC Details">
+          <div class="main-div">
+      <table class="table table-striped table-hover">
+        <tbody>
+        <tr>
+          <th scope="row">SSC school Name</th>
+          <td>{{data.sslcname}}</td>
+        </tr>
+        <tr>
+          <th scope="row">SSC school year</th>
+          <td>{{data.sslcyear}}</td>
+        </tr>
+        <tr>
+          <th scope="row">SSC Percentage/CGPA</th>
+          <td>{{data.sslcper}}</td>
+        </tr>
+        </tbody></table> </div></mat-tab>
+
+        <mat-tab label="HSC Details">
+          <div class="main-div">
+        <table class="table table-striped">
+          <tbody>
+        <tr>
+          <th scope="row">HSC school Name</th>
+          <td>{{data.hscname}}</td>
+        </tr>
+        <tr>
+          <th scope="row">HSC school year</th>
+          <td>{{data.hscyear}}</td>
+        </tr>
+        <tr>
+          <th scope="row">HSC Percentage/CGPA</th>
+          <td>{{data.hscper}}</td>
+        </tr></tbody></table></div></mat-tab>
+
+        <mat-tab label="College Details">
+          <div class="main-div">
+        <table class="table table-striped">
+          <tbody>
+        <tr>
+          <th scope="row">College Name</th>
+          <td>{{data.colname}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Degree/ Branch</th>
+          <td>{{data.coldeg}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Graduation year</th>
+          <td>{{data.colyear}}</td>
+        </tr>
+        <tr>
+          <th scope="row">CGPA</th>
+          <td>{{data.colper}}</td>
+        </tr>
+        </tbody>
+      </table> </div></mat-tab></mat-tab-group></mat-tab>
+    <mat-tab label="Experience"> 
+      <div class="main-div">
+      <table class="table table-striped">
+        <tbody>
+        <tr>
+          <th scope="row">Company Name:</th>
+          <td>{{data.company}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Start Date:</th>
+          <td>{{data.start}}</td>
+        </tr>
+        <tr>
+          <th scope="row">End date:</th>
+          <td>{{data.end}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Description</th>
+          <td>{{data.desc}}</td>
+        </tr>
+      </tbody>
+      </table> </div>
     </mat-tab>
+    <mat-tab label="Skills"> 
+      <div class="main-div">
+      <table class="table table-striped">
+        <tbody>
+        <tr>
+          <th scope="row">Skills</th>
+          <td>{{data.skill}}</td>
+        </tr>
+        </tbody></table></div></mat-tab>
   </mat-tab-group>

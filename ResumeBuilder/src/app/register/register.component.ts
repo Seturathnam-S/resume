@@ -15,6 +15,9 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 
 export class RegisterComponent {
+  repeatFieldTextType!: boolean;
+  FieldTextType!: boolean;
+  defaultrole = "User";
   profileForm = this.fb.group({
     firstName: ['',Validators.required],
     lastName: ['',Validators.required],
@@ -81,6 +84,14 @@ onReset() {
 reloadPage() {
   window.location.reload();
   
+}
+
+toggleRepeatFieldTextType() {
+  this.repeatFieldTextType = !this.repeatFieldTextType;
+}
+
+toggleFieldTextType() {
+  this.FieldTextType = !this.FieldTextType;
 }
 
 }

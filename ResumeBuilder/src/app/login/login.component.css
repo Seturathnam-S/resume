@@ -1,13 +1,4 @@
-.container{
-  
-    margin-top: 8%;
-    justify-content:center ;
-    align-items: center;
-    flex-direction: column; 
-    justify-content: center;
-    width: 100%;
-    padding: 20px;
-  }
+
   
   .inner{
     overflow : hidden;
@@ -21,13 +12,24 @@
     transform: scale(1.5);
   }
 
-  .wrapper {
-    display: flex;
-    align-items: center;
-    flex-direction: column; 
-    justify-content: center;
-    width: 100%;
-    padding: 20px;
+
+  .example-card {
+    max-width: 400px;
+   
+    
   }
   
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .main-div{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
   

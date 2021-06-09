@@ -109,7 +109,7 @@
             
   
             <mat-form-field class="data" appearance="fill">
-              <mat-label>Year of Completion</mat-label>
+              <mat-label>Degree</mat-label>
               <mat-select   formControlName="collegeDegree"  [(ngModel)]="data.collegeDegree" >
                 <mat-option *ngFor="let p of degree" [value]="p.name">
                   {{ p.name }}
@@ -179,7 +179,7 @@
           <mat-step [stepControl]="skillFormGroup" label="Skills">
             <form [formGroup]="skillFormGroup">
                
-              <mat-label><b>Languages</b></mat-label>
+              <mat-label><b>Skills</b></mat-label>
                 <mat-form-field class="data" appearance="fill">
                   <input  matInput formControlName="languages" [(ngModel)]="data.languages">
                 </mat-form-field>

@@ -26,8 +26,6 @@ var userSchema = new mongoose.Schema({
         required: 'Role can\'t be empty'
     },
 
-    
-
     saltSecret: String
 });
 

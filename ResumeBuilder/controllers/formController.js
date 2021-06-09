@@ -54,32 +54,26 @@ router.post('/', (req, res) => {
     email:  req.body.email,
     mobile:  req.body.mobile,
     gender:  req.body.gender,
-    sslcSchoolName:  req.body.sslcSchoolName,
-    sslcYear:  req.body.sslcYear,
-    sslcMark:  req.body.sslcMark,
-    hscSchoolName: req.body.hscSchoolName,
-    hscYear: req.body.hscYear,
-    hscMark: req.body.hscMark,
-    collegeName: req.body.collegeName,
-    collegeDegree: req.body.collegeDegree,
-    collegeYear: req.body.collegeYear,
-    collegeMark: req.body.collegeMark,
-    companyName: req.body.companyName,
-    startDate: req.body.startDate,
-    endDate: req.body.endDate,
-    description: req.body.description,
-    languages:req.body.languages,
-    technicalSkills: req.body.technicalSkills
-    
+    sslcname:  req.body.sslcname,
+    sslcyear:  req.body.sslcyear,
+    sslcper:  req.body.sslcper,
+    hscname: req.body.hscname,
+    hscyear: req.body.hscyear,
+    hscper: req.body.hscper,
+    colname: req.body.colname,
+    coldeg: req.body.coldeg,
+    colyear: req.body.colyear,
+    colper: req.body.colper,
+    company: req.body.company,
+    start: req.body.stat,
+    end: req.body.end,
+    desc: req.body.desc,
+    skill: req.body.skill,
 
     });
     resume.save((err, doc) => {
         if (!err) { res.send(doc); }
-        else { 
-            if (err.code == 11000)
-            res.status(422).send(['Duplicate email adrress found.']);
-        else
-            console.log('Error in User Save :' + JSON.stringify(err, undefined, 2)); }
+        else { console.log('Error in User Save :' + JSON.stringify(err, undefined, 2)); }
     });
 });
 
@@ -93,23 +87,21 @@ router.put('/:id', (req, res) => {
     email:  req.body.email,
     mobile:  req.body.mobile,
     gender:  req.body.gender,
-    sslcSchoolName:  req.body.sslcSchoolName,
-    sslcYear:  req.body.sslcYear,
-    sslcMark:  req.body.sslcMark,
-    hscSchoolName: req.body.hscSchoolName,
-    hscYear: req.body.hscYear,
-    hscMark: req.body.hscMark,
-    collegeName: req.body.collegeName,
-    collegeDegree: req.body.collegeDegree,
-    collegeYear: req.body.collegeYear,
-    collegeMark: req.body.collegeMark,
-    companyName: req.body.companyName,
-    startDate: req.body.startDate,
-    endDate: req.body.endDate,
-    description: req.body.description,
-    languages:req.body.languages,
-    technicalSkills: req.body.technicalSkills
-
+    sslcname:  req.body.sslcname,
+    sslcyear:  req.body.sslcyear,
+    sslcper:  req.body.sslcper,
+    hscname: req.body.hscname,
+    hscyear: req.body.hscyear,
+    hscper: req.body.hscper,
+    colname: req.body.colname,
+    coldeg: req.body.coldeg,
+    colyear: req.body.colyear,
+    colper: req.body.colper,
+    company: req.body.company,
+    start: req.body.stat,
+    end: req.body.end,
+    desc: req.body.desc,
+    skill: req.body.skill,
     };
     Form.findByIdAndUpdate(req.params.id, { $set: resume }, { new: true }, (err, doc) => {
         if (!err) { res.send(doc); }

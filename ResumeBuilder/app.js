@@ -13,7 +13,7 @@ var app = express();
 
 // middleware
 app.use(bodyParser.json());
-app.use(cors({ origin: 'https://resume-builder-ap.herokuapp.com/' }));
+app.use(cors({ origin: '/' }));
 app.use(passport.initialize());
 app.use('/api', rtsIndex);
 app.use('/form', formController);
